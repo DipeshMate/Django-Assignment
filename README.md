@@ -1,7 +1,6 @@
 # Django Assignment
 
-#### Instructions
-A simple user management Django application, includes functionality for retrieving user details, adding new users, and handling errors for non-existent users.
+A simple Django-based user management application that includes functionality to retrieve user details, add new users, and handle errors for non-existent users.
 
 ---
 
@@ -20,18 +19,19 @@ Follow these instructions to set up and run the application on your local machin
 ##### Following Steps to Setup this Django Application:
 - 1. Install Python 3.x on your machine.
 - 2. Clone the repository:
-     - git clone <repository-url>;
-     - cd <repository-folder>
+     - git clone "project code repository url"
+     - cd "to repository folder"
 - 3. Create and activate a Virtual environment:
      - python3 -m venv venv
      - venv\Scripts\activate
 - 4. install all the required dependencies:
-  - install Manually:
-     - Install django using pip: pip install django.
+  - install dependencies Manually:
+     - Install django using pip: pip install django ,pip install mysqlclient, pip install PyMySQL . 
   - install by requirements.txt file
      - pip install -r requirements.txt
 - 5. Set up the database:
-     - To connect a Django project to a MySQL database, install xampp on your machine , start your MySQL server and Apache. install mysqlclient: " pip install mysqlclient "
+     - To connect a Django project to a MySQL database, install xampp on your machine , start your MySQL server and Apache. install 
+       mysqlclient: " pip install mysqlclient "
      - Create a MySQL database named users.
      - Apply the schema provided in the Database Schema section.
      
@@ -56,18 +56,18 @@ CREATE TABLE users (
 ## Git Workflow
 
 - 1: Clone the Repository:
-  - git clone <repository-url> # copy the repository url
+  - git clone "project repository url" # copy the repository url
 
 - 2: Create a New Branch:
   - Use a descriptive name for your branch
-    - $ git checkout -b <your-branch-name>
+    - git checkout -b "your-branch-name"
 
 - 3: Make your changes and commit them:
-     - git add. git commit -m "your commit name..."
+     - git add. git commit -m "'your commit name...'"
 
 - 4: Push the Changes:
-   - First all the steps the contributor should follow: Push your branch to the remote repository:
-     -  git push origin <your-branch-name>
+   - Push your branch to the remote repository:
+   - git push origin "your-branch-name"
 
 - 5: Create a Pull Request to merge your branch to the main branch.
 
