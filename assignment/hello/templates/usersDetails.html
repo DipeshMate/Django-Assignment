@@ -23,10 +23,11 @@
                     <td>{{user.email}}</td>
                     <td>{{user.role}}</td>
                     <td class="d-flex gap-2">
-                        <!-- <form action="{% url 'editUser' user.id %}" method="get">
+                        <form action="{% url 'editUser' user.id %}" method="GET">
                             {% csrf_token %}
                             <input class="btn btn-warning" type="submit" value="Edit" >
-                        </form> -->
+                        </form>
+
                         <form action="{% url 'deleteUser' user.id %}" method="post">
                             {% csrf_token %}
                             <input type="submit" class="btn btn-danger" value="Delete">
@@ -36,6 +37,9 @@
                 {% endfor %}
             </tbody>
         </table>
+        <div class="d-flex align-items-center justify-content-center ">
+            <a href="{% url 'addUser' %}" class="alert alert-primary text-decoration-none ">Back to Home</a>
+        </div>
         {% else %}
         <h4 class="alert alert-info text-center">No Users Details</h4>
         {% endif %}
