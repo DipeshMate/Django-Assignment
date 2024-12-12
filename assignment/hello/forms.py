@@ -7,7 +7,15 @@ class UserForm(forms.ModelForm):
     model = Users
     fields = ['name','email','role']
     widgets = {
-      'name':forms.TextInput(attrs={'class':'form-control'}),
-      'email':forms.EmailInput(attrs={'class':'form-control'}),
-      'role':forms.TextInput(attrs={'class':'form-control'}),
+      'name':forms.TextInput(attrs={'class':'form-control','placeholder':'Enter your Name'}),
+      'email':forms.EmailInput(attrs={'class':'form-control','placeholder':'Enter your Email'}),
+      'role':forms.TextInput(attrs={'class':'form-control','placeholder':'Enter your Role'}),
     }  
+    error_messages ={'name':
+      {'required':'Naam likhna bhot jyda zarori hain..!'}
+    }
+    labels = {'name': 'Name',
+              'email':'Email',
+              'role':'Role'}
+    
+    
