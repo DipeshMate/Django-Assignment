@@ -19,7 +19,7 @@ def hello(request):
 # function for User details retrieval.
 def users(request):
     us = Users.objects.all()
-    return render(request,'userDetails.html',{'users':us})
+    return render(request,'usersDetails.html',{'users':us})
 
 
 
@@ -47,9 +47,28 @@ def new_users(request):
           reg = Users(name=name,email=email,role=role)
           reg.save()
           messages.success(request,('New User has been Successfully Added!'))
-          return redirect('new_users')
+          return redirect('addUser')
     else:
         
         us = UserForm()
     return render(request, 'addUsers.html',{'form':us})
         
+# function for edit user Details
+def editUser(request,id):
+    if request.method == 'GET':
+        us = Users.objects.get(pk=id)
+        fm = UserForm(instance=us)
+    else:
+        us = Users.objects.get(pk=id)
+        fm = UserForm(request.POST, instance=us)
+        fm.save()
+        return HttpResponseRedirect('/users')
+    return render(request, 'editUser.html',{'form':fm})
+
+# function for delete User
+
+def deleteUser(request, id):
+  if request.method == 'POST':
+    pi = Users.objects.get(pk=id)
+    pi.delete()
+  return HttpResponseRedirect('/users')

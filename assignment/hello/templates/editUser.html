@@ -1,0 +1,24 @@
+{% extends 'hello.html' %}
+{% block content %}
+<div class="container">
+    <div class="col-md-4 center-block">
+        <h4 class="alert alert-info text-center">Edit User</h4>
+        <!-- {% if messages %}
+       {% for message in messages %}
+     <div class="show alert alert-success alert-dismissible fade" role="alert">
+       <strong> Great! </strong>{{message}} 
+       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      </div>
+     {% endfor %}
+     {% endif %} -->
+     <form class="d-block" action="" method="post"> 
+        {% csrf_token %}
+        {{form.as_p}}
+        <input class="btn btn-primary" type="submit" value="update"> 
+      </form>
+    </div>
+</div>
+{% endblock content %}
+
